@@ -1,0 +1,62 @@
+@import 'var.less';
+
+@space: 12px;
+@space-half: (@space / 2);
+@icon-width: 14px;
+@icon-width-half: (@icon-width / 2);
+@active-color: #1F90E6;
+@gray-color: #b6c3d2;
+
+.record-steps {
+    .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        & + .item {
+            margin-top: @space;
+        }
+        .icon {
+            width: @icon-width;
+            height: @icon-width;
+            border: 1px solid @gray-color;
+            border-radius: 50%;
+        }
+        .contain {
+            margin-left: 10px;
+            flex: 1;
+        }
+        &:not(:first-child)::before, &:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: @icon-width-half;
+            transform: translateX(-50%);
+            width: 1px;
+            background-color: @gray-color;
+        }
+        &::before {
+            top: -@space-half;
+            bottom: calc(50% + @icon-width-half);
+        }
+        &::after {
+            top: calc(50% + @icon-width-half);
+            bottom: -@space-half;
+        }
+        &.active {
+            .icon {
+                border-color: @active-color;
+            }
+            &::before, &::after {
+                background-color: @active-color;
+            }
+        }
+        &:not(.active) {
+            color: @gray-color;
+        }
+        &:not(.active) + .active::before {
+            background-color: @gray-color;
+        }
+    }
+    > div.active + section.item::before {
+        background-color: @active-color;
+    }
+}

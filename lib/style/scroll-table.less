@@ -1,0 +1,114 @@
+@import 'var.less';
+
+@lineHeight: 1px;
+@textHeight: 24px;
+
+.scroll-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-align: center;
+    > .table-head {
+        display: flex;
+        list-style: none;
+        font-size: 14px;
+        color: #7EB8F3;
+        > li {
+            white-space: nowrap;
+        }
+    }
+    > .table-body {
+        margin-top: 5px;
+        font-size: 12px;
+        flex: 1;
+        overflow: hidden;
+        > div {
+            position: relative;
+            display: flex;
+            > div {
+                background-color: #052D60;
+                &:first-child {
+                    background-color: #043E79;
+                    > ul {
+                        color: #1F90E6;
+                        font-size: 13px;
+                        > li {
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                margin-top: -@lineHeight;
+                                height: @lineHeight;
+                                background-color: #061D3D;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    > ul {
+                        text-align: left;
+                    }
+                }
+                &:nth-child(3) {
+                    > ul {
+                        text-align: right;
+                    }
+                }
+                &:nth-child(4) {
+                    > ul {
+                        text-align: right;
+                    }
+                }
+                > ul {
+                    display: inline-block;
+                    list-style: none;
+                    > li {
+                        > p {
+                            padding-bottom: @lineHeight;
+                            line-height: @textHeight + @lineHeight;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+            &.one-page > div {
+                > ul > li:last-child {
+                    > p {
+                        padding-bottom: 0;
+                        line-height: @textHeight;
+                    }
+                }
+                &:nth-child(1) > ul > li:last-child {
+                    &:after {
+                        height: 0;
+                    }
+                }
+            }
+        }
+    }
+    > .table-head > li, > .table-body > div > div {
+        &:nth-child(1) {
+            flex: 0.7;
+        }
+        &:nth-child(2) {
+            flex: 4.3;
+        }
+        &:nth-child(3) {
+            flex: 3.2;
+        }
+        margin-right: -0.5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    > .none {
+        flex: 1;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

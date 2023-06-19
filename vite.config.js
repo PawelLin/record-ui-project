@@ -10,22 +10,25 @@ const kebabCase = key => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    server: {
+        host: true
+    },
     plugins: [
         vue(),
         vueJsx(),
-        Components({
-            resolvers: [
-                name => {
-                    if (name.startsWith('Record')) {
-                        const partialName = name.slice(6)
-                        return {
-                            name: partialName,
-                            from: '../dist',
-                            sideEffects: `../dist/${kebabCase(partialName)}/style.css`
-                        }
-                    }
-                }
-            ]
-        })
+        // Components({
+        //     resolvers: [
+        //         name => {
+        //             if (name.startsWith('Record')) {
+        //                 const partialName = name.slice(6)
+        //                 return {
+        //                     name: partialName,
+        //                     from: '../dist',
+        //                     sideEffects: `../dist/${kebabCase(partialName)}/style.css`
+        //                 }
+        //             }
+        //         }
+        //     ]
+        // })
     ],
 })

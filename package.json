@@ -7,6 +7,7 @@
     "build": "vite build",
     "build:lib": "node ./scripts/build.mjs",
     "preview": "vite preview",
+    "deploy": "sh deploy.sh",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
