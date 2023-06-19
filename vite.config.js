@@ -10,6 +10,7 @@ const kebabCase = key => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '/record-ui-project/',
     server: {
         host: true
     },

@@ -9,7 +9,7 @@
             <div :class="[onePage && 'one-page']">
                 <div v-for="(column, indexs) in columns" :key="column.key">
                     <ul>
-                        <li :ref="!indexs && 'tableItem'" v-for="(item, index) in list" :key="`${column.key}item${index}`">
+                        <li :ref="!indexs ? 'tableItem' : null" v-for="(item, index) in list" :key="`${column.key}item${index}`">
                             <p>{{transData(column, item)}}</p>
                         </li>
                     </ul>
