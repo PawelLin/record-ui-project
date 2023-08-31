@@ -1,0 +1,22 @@
+{
+  "name": "pawel-record-vue",
+  "version": "0.0.3",
+  "description": "记录开发过的vue组件库",
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "components"
+  ],
+  "license": "MIT",
+  "author": "pawellin",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PawelLin/record-ui-project.git"
+  }
+}

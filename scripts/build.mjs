@@ -12,7 +12,7 @@ const libDir = resolve('../lib')
         publicDir: false,
         build: {
             outDir: distDir,
-            sourcemap: true,
+            sourcemap: false,
             lib: {
                 entry: path.join(libDir, 'index.js'),
                 name: 'RecordUI',
@@ -37,7 +37,7 @@ const libDir = resolve('../lib')
                 publicDir: false,
                 build: {
                     outDir,
-                    sourcemap: true,
+                    sourcemap: false,
                     lib: {
                         entry: componentDir,
                         name: name.replace(/([A-Z])/g, '-$1-').slice(1).toLowerCase(),
